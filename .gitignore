@@ -1,5 +1,6 @@
 # Byte-compiled / optimized / DLL files
-__pychace__/
+#__pychace__/
+#cogs/__pychace__/
 
 #config files
 settings
