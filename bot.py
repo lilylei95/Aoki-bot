@@ -1,19 +1,19 @@
 import discord
+import json
 from discord.ext import commands
 
 import sys, traceback
 
 import sys, traceback
 
-TOKEN = 'NDU2MzAyOTM5ODY3MTg1MTYy.DgOELQ.Bkh-jQwNlHwimFhnPLJVfbL6Nms'
+with open('settings/config.json') as f:
+    data = json.load(f)
 
 cogs_dir = ['cogs.members'
             ,'cogs.messages'
             ,'cogs.roles']
 
 bot = commands.Bot(command_prefix = '!',pm_help=True)
-
-# bot.remove_command('help')
 
 if __name__ == '__main__':
     for extension in cogs_dir:
@@ -30,4 +30,4 @@ async def on_ready():
     print(bot.user.id)
     print('------')
 
-bot.run(TOKEN, bot=True, reconnect=True)
+bot.run(data["TOKEN"], bot=True, reconnect=True)
